@@ -9,15 +9,30 @@ It is paired with a backend which, for now, contains the API content needed for 
 - <a href="https://github.com/McGovern7/portfolio-app-frontend" target="_blank">Portfolio App Frontend</a>
 
 ## Environment
-This portfolio app backend is initiated through the following steps
-1. mkdir portfolio && cd portfolio (the portfolio folder contains both frontend and backend repositories)
-2. python3 -m venv env (create python virtual environment)
-3. source env/bin/activate
-4. pip install fastapi uvicorn sqlalchemy passlib pymysql
-5. pip install python-jose python-multipart cryptography bcrypt
-6. mkdir backend && cd backend
-7. clone backend repository with ssh
-8. host MySQL data using MySQLWorkbench on root
+This portfolio app backend is initiated through the following steps:
+
+If not already done, create a folder to contain the python environment, sql script, along with both frontend and backend folders
+```
+mkdir portfolio && cd portfolio
+```
+```
+python3 -m venv env (create python virtual environment)
+source env/bin/activate
+```
+Install backend requirements in ```/portfolio```
+```
+pip install fastapi uvicorn sqlalchemy passlib pymysql
+pip install python-jose python-multipart cryptography bcrypt
+```
+```
+mkdir backend && cd backend
+```
+Clone backend repository with ssh, then host MySQL data using MySQLWorkbench on :root
+
+Run the FastAPI server
+```
+uvicorn main:app --reload
+```
 
 ## BUILD
 In order to host this app beyond my local system, the backend will be hosted using Render.com
