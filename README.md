@@ -1,8 +1,12 @@
 # Portfolio App Backend
-A FastAPI backend which manages the data for the tarkov-project section of my portfolio
 
-## TARKOV APP DESCRIPTION
-This app provides a space for players of the game Escape from Tarkov to store the ammo they have found, and view the ammo's advance data. The storage tab can be accessed after registering an account and loggin in.
+## PORTFOLIO APP DESCRIPTION
+This repository provides a space for me to host my portfolio, along with any relevant Full-Stack React projects. The app is a multipage react-app utilizing advanced features to showcase my frontend development skills.
+
+It is paired with a backend which, for now, contains the API content needed for my tarkov-app.
+
+## Related Repositories
+- <a href="https://github.com/McGovern7/portfolio-app-frontend" target="_blank">Portfolio App Frontend</a>
 
 ## Environment
 This portfolio app backend is initiated through the following steps
