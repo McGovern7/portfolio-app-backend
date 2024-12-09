@@ -9,14 +9,15 @@ from models import User
 from passlib.context import CryptContext
 from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
 from jose import jwt, JWTError
+import os
 
 router = APIRouter(
     prefix='/auth',
     tags=['auth']
 )
 
-SECRET_KEY = '48541489F0A600CC6BE9AF391925AFC9F2AE317E2920CC91FB5EB287E6775AC5'
-ALGORITHM = 'HS256'
+SECRET_KEY = os.getenv("SECRET_KEY")
+ALGORITHM = os.getenv("ALGORITHM")
 ACCESS_TOKEN_EXPIRATION_TIME = 30
 
 pwd_context = CryptContext(schemes=['bcrypt'], deprecated='auto')
