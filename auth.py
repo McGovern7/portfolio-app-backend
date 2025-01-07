@@ -19,8 +19,9 @@ router = APIRouter(
     tags=['auth']
 )
 
-SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = os.getenv("ALGORITHM")
+API_KEY = os.getenv("API_KEY")
+SECRET_KEY = os.getenv("SECRET_KEY")
 ACCESS_TOKEN_EXPIRATION_TIME = 30
 
 pwd_context = CryptContext(schemes=['bcrypt'], deprecated='auto')
@@ -74,6 +75,7 @@ def create_access_token(data: dict, expires_delta: timedelta | None = None) -> s
     to_encode.update({"exp": expire}) # know when jwt is expired
     
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM) # return an encoded jwt
+    print(encoded_jwt)
     return encoded_jwt
 
 # CREATE post for token
